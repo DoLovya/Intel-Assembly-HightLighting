@@ -1,0 +1,25 @@
+{
+    "name": "assembly-lang",
+    "displayName": "Assembly Lang",
+    "description": "Syntax hightlighting for Intel-Assembly Lang",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "Intel-Assembly",
+            "aliases": ["Intel-Assembly", "Intel-Assembly"],
+            "extensions": [".asm"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "Intel-Assembly",
+            "scopeName": "source.asm",
+            "path": "./syntaxes/Intel-Assembly.tmLanguage.json"
+        }]
+    }
+}
