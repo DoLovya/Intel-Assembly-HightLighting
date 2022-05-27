@@ -7,14 +7,25 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#registers"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#constant"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.Intel-Assembly",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.Intel-Assembly",
+					"match": "\\b(push|mov|add|pop|ret|call|sub)\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.Intel-Assembly",
@@ -24,6 +35,30 @@
 				{
 					"name": "constant.character.escape.Intel-Assembly",
 					"match": "\\\\."
+				}
+			]
+		},
+		"registers": {
+			"patterns": [
+				{
+					"name": "variable.Intel-Assembly",
+					"match": "rbp|rsp|ecx|eax"
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.Intel-Assembly",
+					"match": ";.*$"
+				}
+			]
+		},
+		"constant": {
+			"patterns": [
+				{
+					"name": "constant.numeric.Intel-Assembly",
+					"match": "(?i)(\\$[\\d\\w]*)|(0x([a-f|0-9]+)|(\\b[0-9]+\\b))"
 				}
 			]
 		}
